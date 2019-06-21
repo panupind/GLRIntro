@@ -101,3 +101,16 @@ dataframe.1 <- data.frame(v.a, v.b , v3)
 dataframe.1
 
 str(dataframe.1)
+
+new.row <- data.frame(v.a = 9 , v.b =  9 , v3 = "New Row Added")
+new.row
+dataframe.2 <- rbind(dataframe.1, new.row)
+dataframe.2
+str
+
+new.col <- c(10,20,30,40,50)
+new.col
+dataframe.3 <- cbind(dataframe.1 , new.col)
+dataframe.3
+
+
