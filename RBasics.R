@@ -113,4 +113,17 @@ new.col
 dataframe.3 <- cbind(dataframe.1 , new.col)
 dataframe.3
 
+names(dataframe.3)
+
+nrow(dataframe.3)
+ncol(dataframe.3)
+dim(dataframe.3)
+
+dataframe.3[3,]
+dataframe.3[,2]
+
+
+dataframe.3$v.b
+dataframe.3$v.b[4]
+
 
