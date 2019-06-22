@@ -123,7 +123,7 @@ dataframe.3[3,]
 dataframe.3[,2]
 
 
-dataframe.3$v.b
+dataframe.3$v.bin
 dataframe.3$v.b[4]
 
 
