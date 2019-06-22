@@ -12,4 +12,5 @@ histogram(~Miles | Gender)
 histogram(~Miles | Product)
 boxplot(Miles~Gender , horizontal = TRUE,  col=c("Red","Blue") )
 boxplot(Miles~Product , horizontal = TRUE ,  col=c("Red","Blue", "Green") )
-
+rpivotTable(CardioGoodFitness)
+CardioGoodFitness$IncomeGroup <- cut( Income , c(29123,40000,60000,80000,105000))
