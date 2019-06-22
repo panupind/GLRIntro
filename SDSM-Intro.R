@@ -1,0 +1,15 @@
+library(rpivotTable)
+library(lattice)
+names(CardioGoodFitness)
+head(CardioGoodFitness)
+summary(CardioGoodFitness)
+median(CardioGoodFitness$Miles)
+attach(CardioGoodFitness)
+
+by(data=CardioGoodFitness, INDICES = Product , FUN =  summary)
+hist(Miles)
+histogram(~Miles | Gender)
+histogram(~Miles | Product)
+boxplot(Miles~Gender , horizontal = TRUE,  col=c("Red","Blue") )
+boxplot(Miles~Product , horizontal = TRUE ,  col=c("Red","Blue", "Green") )
+
