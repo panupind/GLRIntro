@@ -113,6 +113,9 @@ new.col
 dataframe.3 <- cbind(dataframe.1 , new.col)
 dataframe.3
 
+
+names(dataframe.3)
+colnames(dataframe.3) <- c("Session","students","topic","new topic")
 names(dataframe.3)
 
 nrow(dataframe.3)
@@ -123,7 +126,98 @@ dataframe.3[3,]
 dataframe.3[,2]
 
 
-dataframe.3$v.bin
+dataframe.3$v.b
 dataframe.3$v.b[4]
 
+dataframe.3
 
+# 22/6/2019
+
+dataframe.sub1 <- dataframe.3[,1:2]
+dataframe.sub1
+
+dataframe.3
+dataframe.sub2 <- dataframe.3[,c("Session","students")]
+dataframe.sub2
+
+dataframe.sub3 <- subset(dataframe.3, students >= 2)
+dataframe.sub3
+
+
+dataframe.sub4 <- subset(dataframe.3, topic == "filler")
+dataframe.sub4
+
+
+dataframe.3[order(dataframe.3$students),]
+dataframe.3[order(dataframe.3$students, decreasing = TRUE),]
+
+library(MASS)
+hist(input.data$Price)
+
+hist(input.data$Price , main =  "Price Histogram" , xlab = "Price" , ylab = "count")
+hist(input.data$Price , col= c("Red","Blue","Green"),  main =  "Price Histogram" , xlab = "Price" , ylab = "count")
+
+hist(input.data$Price , col= rainbow(6),  main =  "Price Histogram" , xlab = "Price" , ylab = "count")
+
+
+
+
+price.colors <- ifelse(input.data$Price > 25 , "Blue" , "Red")
+price.colors
+
+
+library(ggplot2)
+attach(input.data)
+plot(input.data$Horsepower, input.data$Price , main="Horsepower Vs Price" , xlab = "Horsepower" , ylab ="Price")
+
+qplot(Cylinders , MPG.city , data = input.data)
+
+qplot(MPG.city , Price , data = input.data)
+
+
+ggplot(input.data , aes( x= Price))
+
+ggplot(input.data , aes( x= Price)) + 
+  geom_histogram(binwidth = 8)
+
+ggplot(input.data , aes( x= Price)) + 
+  geom_histogram(binwidth = 8 , colour = "black", fill = "white")
+
+
+ggplot(input.data , aes( x= Price)) + 
+  geom_histogram(binwidth = 8 , color = "black", fill = "white")
+
+ggplot(input.data , aes( x= Type , y  = Price )) + 
+  geom_bar()
+
+ggplot(input.data , aes( x= Type , y  = Price )) + 
+  geom_bar(stat = "identity")
+
+
+ggplot(input.data , aes( x= Type , y  = Price ,  fill = Type)) + 
+  geom_bar(stat = "identity" , colour = "black")
+
+
+update.packages("dplyr")
+library(dplyr)
+
+mean.price <- input.data%>%
+  group_by(Type)
+summarise(Price = mean(Price))
+mean.price
+
+
+#ggplot(input.data , aes( x= Type , y  = mean.price ,  fill = Type)) + 
+ # geom_bar(stat = "identity" , colour = "black")
+
+install.packages("ggplotgui")
+
+
+library(ggplotgui)
+ggplotgui::ggplot_shiny(Cars93)
+
+install.packages("esquisse")
+library(esquisse)
+
+
+esquisser()
