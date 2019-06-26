@@ -1,5 +1,8 @@
+Sys.setenv(http_proxy =  "www-proxy.us.oracle.com:80" , https_proxy =  "www-proxy.us.oracle.com:80")
 Sys.unsetenv("http_proxy")
 Sys.unsetenv("https_proxy")
+Sys.getenv("http_proxy")
+Sys.getenv("https_proxy")
 getwd()
 install.packages("MASS")
 library(MASS)
