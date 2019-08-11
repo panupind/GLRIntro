@@ -37,6 +37,7 @@ matxM <- head(FoodNutrition,5)[,1:5]
 
 matxM
 
+names(matxM)
 # 8 class of sodium(_mg)
 
 class(`Sodium_(mg)`)
