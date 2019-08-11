@@ -1,0 +1,17 @@
+# numerical rules
+age >= 0
+height > 0
+age <= 150
+age > yearsmarried
+yearsmarried >= 0
+
+# categorical rules
+status %in% c("married","single","widowed")
+ group %in% c("child","adult","elderly")
+  if ( status == "married" ) group %in% c("adult","elderly")
+
+# mixed rules
+  if ( status %in% c("married","widowed")) age - yearsmarried >= 17
+  if ( age < 18 ) group == "child"
+  if ( age >= 18 && age <65 ) group == "adult"
+  if ( age >= 65 ) group == "elderly"
