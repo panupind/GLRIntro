@@ -54,9 +54,11 @@ plot(data)
 
 ## For now, we will omit Day and Month which are categorical variables
 data1 = data[-c(5,6)]
+data1
 summary(data1)
 
 ## Randomly insert 10 missing values in Wind and Temp columns
+
 n = nrow(data1)
 n
 
@@ -99,11 +101,15 @@ data1[5,]
 ## Identify rows with high missing values
 high_miss_rows = data1[row_miss > 25,]
 high_miss_rows   ## 10 Rows have more than 25% missing values
+nrow(high_miss_rows)
 
 ## Keep only the rows with less than 30% missing values
 low_miss_rows = data1[row_miss < 30,]
 low_miss_rows
+nrow(low_miss_rows)
 
+
+install.packages("mice")
 ## Using mice package
 library(mice)
 md.pattern(data1)
@@ -244,6 +250,8 @@ violatedEdits(E_age,people)   ## Record 4 violates the second age rule <=120
 E_file = editfile("EDA_Rules_Edit.txt")
 
 rule_violations = violatedEdits(E_file, people)
+
+people
 
 rule_violations
 
